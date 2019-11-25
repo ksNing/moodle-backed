@@ -15,6 +15,16 @@ public class EventController {
     @Autowired
     private EventBeanRepository eventBeanRepository;
 
+    /**
+     * 点击事件的发生
+     * @param xuehao
+     * @param name
+     * @param eventName
+     * @param systemVersion
+     * @param timeStamp
+     * @param devicesModel
+     * @return
+     */
     @RequestMapping("/event")
     public String startCount(@RequestParam("xuehao") String xuehao,
                            @RequestParam("name") String name,
