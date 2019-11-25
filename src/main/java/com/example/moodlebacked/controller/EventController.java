@@ -15,6 +15,13 @@ public class EventController {
     @Autowired
     private EventBeanRepository eventBeanRepository;
 
+
+
+    @RequestMapping("/main")
+    public String main() {
+        return "hello moodle";
+    }
+
     /**
      * 点击事件的发生
      * @param xuehao
