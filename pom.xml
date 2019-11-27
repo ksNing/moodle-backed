@@ -13,7 +13,7 @@
 	<artifactId>moodle-backed</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>moodle-backed</name>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -59,6 +59,14 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+
 
 		<!-- 阿里开源数据源 -->
 		<dependency>
@@ -81,8 +89,9 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.10.1</version>
 		</dependency>
-	</dependencies>
 
+
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
