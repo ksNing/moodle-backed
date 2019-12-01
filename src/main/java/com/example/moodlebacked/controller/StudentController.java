@@ -78,15 +78,17 @@ public class StudentController {
     public HashMap<String,String> login(@RequestParam("xuehao") String xuehao,
                          @RequestParam("passWord") String passWord) {
         HashMap<String,String> map = new HashMap<>();
+
         Student s = studentRepository.findByXuehao(xuehao);
-        if(s == null) {
-            map.put("msg","学生学号或密码错误");
-        }
-        if(!passWord.equals(s.getPassWord())) {
-            map.put("msg","学生学号或密码错误");
+        if(null == s) {
+            map.put("msg","学生不存在或学号错误");
         } else {
-            map.put("msg","登录成功");
-            map.put("name",s.getName());
+            if(!passWord.equals(s.getPassWord())) {
+                map.put("msg","学生学号或密码错误");
+              }else {
+                map.put("msg","登录成功");
+                map.put("name",s.getName());
+            }
         }
         return map;
     }
